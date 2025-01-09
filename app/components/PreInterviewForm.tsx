@@ -7,7 +7,8 @@ import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
-import { Bot, Sparkles, Building2, FileQuestion, Briefcase } from 'lucide-react'
+import { Sparkles, Building2, FileQuestion, Briefcase } from 'lucide-react'
+import Image from "next/image" 
 
 interface PreInterviewFormProps {
   onSubmit: (jobDetails: JobDetails) => void
@@ -48,17 +49,17 @@ export default function PreInterviewForm({ onSubmit }: PreInterviewFormProps) {
     >
       <Card className="backdrop-blur-sm bg-black/40 border-zinc-800">
         <CardHeader className="space-y-2 text-center pb-2">
-          <motion.div
-            className="w-20 h-20 mx-auto bg-gradient-to-tr from-zinc-700 to-zinc-600 rounded-2xl p-5"
-            whileHover={{ scale: 1.05, rotate: 5 }}
-          >
-            <Bot className="w-full h-full text-white" />
-          </motion.div>
+        <Image 
+              src="@/assets/aura.png" 
+              alt="AURA Bot" 
+              width={80} 
+              height={80} 
+            />
           <motion.h2 
             className="text-3xl font-bold bg-gradient-to-r from-zinc-200 to-white bg-clip-text text-transparent"
             whileHover={{ scale: 1.02 }}
           >
-            Virtual HR Assistant
+            A.U.R.A (Artificial Uplift and Recruiting Assistant)
           </motion.h2>
           <p className="text-zinc-400">Let's set up your AI-powered interview session</p>
         </CardHeader>

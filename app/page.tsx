@@ -55,21 +55,21 @@ export default function VirtualHRBot() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-zinc-900 to-black text-white relative overflow-hidden">
-      <FloatingShapes />
       <div className="max-w-4xl mx-auto px-4 py-12 relative z-10">
         {!interviewStarted ? (
           <PreInterviewForm onSubmit={handleStartInterview} />
         ) : (
           <InterviewInterface
-            isRecording={isRecording}
-            isResponding={isResponding}
-            response={response}
-            jobDetails={jobDetails}
-            onStartRecording={() => setIsRecording(true)}
-            onStopRecording={handleAudioRecorded}
-            isComplete={isInterviewComplete(interviewState)}
+          isRecording={isRecording}
+          isResponding={isResponding}
+          response={response}
+          jobDetails={jobDetails}
+          onStartRecording={() => setIsRecording(true)}
+          onStopRecording={handleAudioRecorded}
+          isComplete={isInterviewComplete(interviewState)}
           />
         )}
+        <FloatingShapes />
       </div>
     </div>
   )

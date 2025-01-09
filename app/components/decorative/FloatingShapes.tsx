@@ -1,6 +1,6 @@
-'use client'
+'use client';
 
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
 
 export function FloatingShapes() {
   return (
@@ -15,14 +15,14 @@ export function FloatingShapes() {
         transition={{
           duration: 8,
           repeat: Infinity,
-          ease: "easeInOut"
+          ease: 'easeInOut',
         }}
         style={{
-          filter: "drop-shadow(0 0 20px rgba(255,255,255,0.1))",
+          filter: 'drop-shadow(0 0 20px rgba(255, 255, 255, 0.1))',
         }}
       />
 
-      {/* Star shape */}
+      {/* Star Shape */}
       <motion.div
         className="absolute bottom-40 left-[15%] w-40 h-40"
         animate={{
@@ -32,7 +32,7 @@ export function FloatingShapes() {
         transition={{
           duration: 20,
           repeat: Infinity,
-          ease: "linear"
+          ease: 'linear',
         }}
       >
         <div className="relative w-full h-full">
@@ -47,14 +47,14 @@ export function FloatingShapes() {
                 top: '50%',
                 marginLeft: '-8px',
                 marginTop: '-32px',
-                filter: "drop-shadow(0 0 10px rgba(255,255,255,0.2))",
+                filter: 'drop-shadow(0 0 10px rgba(255, 255, 255, 0.2))',
               }}
             />
           ))}
         </div>
       </motion.div>
 
-      {/* Floating orbs */}
+      {/* Floating Orbs */}
       {[...Array(3)].map((_, i) => (
         <motion.div
           key={i}
@@ -62,7 +62,7 @@ export function FloatingShapes() {
           style={{
             left: `${30 + i * 20}%`,
             top: `${40 + i * 15}%`,
-            filter: "drop-shadow(0 0 15px rgba(255,255,255,0.15))",
+            filter: 'drop-shadow(0 0 15px rgba(255, 255, 255, 0.15))',
           }}
           animate={{
             y: [0, 30, 0],
@@ -71,11 +71,11 @@ export function FloatingShapes() {
           transition={{
             duration: 5 + i * 2,
             repeat: Infinity,
-            ease: "easeInOut",
+            ease: 'easeInOut',
             delay: i * 0.8,
           }}
         />
       ))}
     </div>
-  )
+  );
 }
