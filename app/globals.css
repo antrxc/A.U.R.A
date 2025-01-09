@@ -3,19 +3,71 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: 0 0% 0%;
+  --foreground: 0 0% 100%;
+  --card: 0 0% 0%;
+  --card-foreground: 0 0% 100%;
+  --popover: 0 0% 0%;
+  --popover-foreground: 0 0% 100%;
+  --primary: 0 0% 98%;
+  --primary-foreground: 0 0% 9%;
+  --secondary: 0 0% 14.9%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 0 0% 14.9%;
+  --muted-foreground: 0 0% 63.9%;
+  --accent: 0 0% 14.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 14.9%;
+  --input: 0 0% 14.9%;
+  --ring: 0 0% 83.1%;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-background text-foreground;
+}
+
+.glass-effect {
+  @apply backdrop-blur-md bg-white/10 border border-white/20;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+@layer utilities {
+  .prose-invert {
+    --tw-prose-body: theme('colors.zinc.100');
+    --tw-prose-headings: theme('colors.white');
+    --tw-prose-links: theme('colors.blue.400');
+    --tw-prose-bold: theme('colors.white');
+    --tw-prose-counters: theme('colors.zinc.400');
+    --tw-prose-bullets: theme('colors.zinc.400');
+    --tw-prose-quotes: theme('colors.zinc.100');
+    --tw-prose-quote-borders: theme('colors.zinc.700');
+    --tw-prose-captions: theme('colors.zinc.400');
+    --tw-prose-code: theme('colors.white');
+    --tw-prose-pre-code: theme('colors.zinc.100');
+    --tw-prose-pre-bg: theme('colors.zinc.900');
+    --tw-prose-th-borders: theme('colors.zinc.600');
+    --tw-prose-td-borders: theme('colors.zinc.700');
+  }
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-zinc-200 to-white;
+}
+
+.glass-card {
+  @apply backdrop-blur-sm bg-black/40 border-zinc-800;
 }
