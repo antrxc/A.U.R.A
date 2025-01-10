@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Sparkles, Building2, FileQuestion, Briefcase } from 'lucide-react'
 import Image from "next/image" 
+import Bot from "@/assets/aura.png"
 
 interface PreInterviewFormProps {
   onSubmit: (jobDetails: JobDetails) => void
@@ -50,7 +51,7 @@ export default function PreInterviewForm({ onSubmit }: PreInterviewFormProps) {
       <Card className="backdrop-blur-sm bg-black/40 border-zinc-800">
         <CardHeader className="space-y-2 text-center pb-2">
         <Image 
-              src="@/assets/aura.png" 
+              src={Bot}
               alt="AURA Bot" 
               width={80} 
               height={80} 
